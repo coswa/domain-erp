@@ -1,0 +1,13 @@
+CREATE TABLE `users` (
+  `UserID` int(11) NOT NULL auto_increment,
+  `UserName` varchar(30) collate utf8_unicode_ci NOT NULL default '',
+  `UserPass` varchar(32) collate utf8_unicode_ci NOT NULL default '',
+  `UserSession` varchar(32) collate utf8_unicode_ci default NULL,
+  `UserMail` varchar(150) collate utf8_unicode_ci NOT NULL default '',
+  PRIMARY KEY (`UserID`),
+  UNIQUE KEY `NickName` (`UserName`),
+  UNIQUE KEY `UserMail` (`UserMail`),
+  UNIQUE KEY `UserSession` (`UserSession`)
+) ENGINE=MyISAM;
+
+INSERT INTO users SET UserName = 'admin', UserPass = MD5('coswa284'), UserMail = 'info@coswa.de';
